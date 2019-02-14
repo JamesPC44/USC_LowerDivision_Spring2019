@@ -14,7 +14,7 @@
 
 \title{Ripples}
 \author{Hunter Damron}
-\date{\today}
+\date{1 March 2019}
 
 \newcommand{\block}[2]{\fill (#1,#2) rectangle (#1+1,#2+1);}
 \newcommand{\checker}[1]{
@@ -30,11 +30,11 @@
 	\maketitle
 
 	\section*{Problem Description}
-	In an oddly square world, ripples do not radiate from the source as a ring but rather as a diamond as demonstrated in Figure~\ref{fig:ripple}. Note that when a wave meets the end of the defined world, it wraps around as if the world is toroidal. And, when waves collide, they cancel each other in that time instance (each wave still moves after that time instance in its previous direction). However, if more than two wave points collide, each pair of wave points cancels. Assume the bottom left cell of the world is index $(0,0)$
+	In an oddly square world, ripples do not radiate from the source as a ring but rather as a diamond as demonstrated in Figure~\ref{fig:ripple}. Note that when a wave meets the end of the defined world, it wraps around as if the world is toroidal. And, when waves collide, they cancel each other in that time instance (each wave still moves after that time instance in its previous direction). However, if more than two wave points collide, each pair of wave points cancels. This cancellation is only present for a single time step, however, as waves continue to propagate after collisions. Assume the bottom left cell of the world is index $(0,0)$ with right as $+x$ and up as $+y$.
 
 	\begin{figure}[h!]
 		\centering
-		\caption{Evolution of the waves. The small circle denotes the location of a dropped object at time 0 and filled squares denote wave points.} \label{fig:ripple}
+		\caption{Evolution of the waves. The small circle denotes the location of a dropped object at time 0 and filled squares denote wave points. Shaded squares denote collided waves and are labelled only for demonstration.} \label{fig:ripple}
 		\begin{tabular}{cc}
 		$t=0$ & $t=2$ \\
 		\begin{tikzpicture}[scale=0.5]
