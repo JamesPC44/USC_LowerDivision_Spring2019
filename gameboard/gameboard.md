@@ -15,6 +15,24 @@ An example of a valid board is.
 0101
 1010
 
+An example of one done is starting with the board:  
+
+000  
+101  
+010  
+  
+In just two moves we can get to the final board. The first by flipping everything from the middle square to the upper-left most corner. And then again with the upper-left most corner.
+  
+110  
+101  
+010  
+  
+010  
+101  
+010  
+
+So the output for the inputted board would be 2.
+
 ## Input
 
 ---

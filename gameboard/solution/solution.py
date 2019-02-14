@@ -26,5 +26,6 @@ def main():
             board[ii][jj] %= 2
   print(numtips)
 
+
 if __name__ == '__main__':
     main()

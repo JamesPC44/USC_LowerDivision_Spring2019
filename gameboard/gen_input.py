@@ -3,7 +3,7 @@
 
 from random import randint
 
-n = randint(3, 100)
+n = 3#randint(3, 100)
 
 board = [[randint(0,1) for i in range(n)] for j in range(n)]
 
