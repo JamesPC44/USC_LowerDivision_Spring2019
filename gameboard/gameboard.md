@@ -4,7 +4,7 @@
 
 The queen is trying to repaint her nxn chessboard. Someone decided to repaint the chessboard, so it is no longer in the alternating colors like a chessboard should be. The squares in the chessboard can be of two colors, black, or white. The queen can only work in rectangles(squares included) however, and she doesn't have any paint. The squares are very scared of the frightening queen, so when she orders the squares to switch they switch, from where she is standing to the upper-left most square(in a rectangular fashion).
 
-When she does order the squares, every square to the left most square on the same row, to the top most piece at the top, and all squares from those boundaries to the top left square, flip from black to white, and from white to black. However it is very taxing for the queen to order all of her square. She would like to know what the minimum number of orders would be sufficent for her to get all of her squares so she can bring her pieces to the board.
+When she does order the squares, every square to the left most square on the same row, to the top most square, and all squares from those boundaries to the upper most left square, flip from black to white, and from white to black. However it is very taxing for the queen to order all of her square. She would like to know what the minimum number of orders would be sufficent for her to get all of her squares in the correct orientation so she can bring her pieces to the board.
 
 The board should be such that no square shares a direct border with a same color square. It also should be that the top left square is white.
 
