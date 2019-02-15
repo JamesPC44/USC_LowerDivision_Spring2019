@@ -5,7 +5,7 @@
 
 from itertools import chain
 
-DEBUG = True
+DEBUG = False
 
 def pworld(world, cancel=True):
     return "\n".join(reversed(["".join(str(int(x%2) if cancel else x%10) for x in row) for row in world]))
@@ -32,7 +32,7 @@ def main():
 
     # if DEBUG: print("%s\n\n%s\n" % (pworld(world, cancel=False), pworld(world)))
     if DEBUG: print(pblocks(world))
-    if DEBUG: print(wavesum)
+    print(wavesum)
 
 if __name__ == "__main__":
     main()

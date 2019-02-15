@@ -14,7 +14,7 @@ class solution {
 
   private final int width, height;
   private final LinkedList<Drop> drops = new LinkedList<>();
-  private static final boolean DEBUG = true;
+  private static final boolean DEBUG = false;
   private static final char WHITE_BOX = '□', BLACK_BOX = '■';
 
   private solution(int width, int height, int n, Scanner in) {
