@@ -5,6 +5,8 @@
 
 from itertools import chain
 
+DEBUG = True
+
 def pworld(world, cancel=True):
     return "\n".join(reversed(["".join(str(int(x%2) if cancel else x%10) for x in row) for row in world]))
 
@@ -24,12 +26,13 @@ def main():
             diagonals = (((x-i, y+dt-i-1), (x+dt-i-1, y+i), (x+i, y-dt+i+1), (x-dt+i+1, y-i)) for i in range(dt-1))
             for x, y in chain(*(diagonals)):
                 world[y % h][x % w] += 1
+        if DEBUG: print("%s\n" % pblocks(world))
 
-    wavesum = sum(x for x in chain(*world) if x % 2 == 1)
+    wavesum = sum(x % 2 for x in chain(*world))
 
-    # print("%s\n\n%s\n" % (pworld(world, cancel=False), pworld(world)))
-    print("%s" % pblocks(world))
-    print(wavesum)
+    # if DEBUG: print("%s\n\n%s\n" % (pworld(world, cancel=False), pworld(world)))
+    if DEBUG: print(pblocks(world))
+    if DEBUG: print(wavesum)
 
 if __name__ == "__main__":
     main()
