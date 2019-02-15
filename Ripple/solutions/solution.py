@@ -8,6 +8,9 @@ from itertools import chain
 def pworld(world, cancel=True):
     return "\n".join(reversed(["".join(str(int(x%2) if cancel else x%10) for x in row) for row in world]))
 
+def pblocks(world):
+    return "\n".join(reversed(["".join('■' if x%2 == 1 else '□' for x in row) for row in world]))
+
 def main():
     w, h, n = (int(x) for x in input().split())
     txy = [(int(x) for x in input().split()) for i in range(n)]
@@ -25,6 +28,7 @@ def main():
     wavesum = sum(x for x in chain(*world) if x % 2 == 1)
 
     # print("%s\n\n%s\n" % (pworld(world, cancel=False), pworld(world)))
+    print("%s" % pblocks(world))
     print(wavesum)
 
 if __name__ == "__main__":
