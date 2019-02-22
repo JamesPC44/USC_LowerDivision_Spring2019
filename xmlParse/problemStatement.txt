@@ -1,0 +1,46 @@
+﻿Your grandma needs your help again, but it isn't just to fix her printer!  She needs to know how deep XML tags are, and wants to know as soon as she sees a closing tag!  Since your grandma is extremely meticulous all her XML documents are perfectly formatted and every tag lines up correctly! 
+
+Input Format
+A string containing XML, as mentioned above your grandma makes great XML and all the tags are guaranteed to be syntactically correct.
+
+Output Format
+each tag followed by a space followed by its depth, each tag should be on its own line.
+
+Sample input 0
+<Fruits>
+	<Fruit>
+		<Name> Apple </Name>
+		<Color> Red </Color>
+	</Fruit>
+</Fruits>
+
+Sample output 0
+Name 2
+Color 2
+Fruit 1
+Fruits 0
+
+Sample input 1
+Let's remember what XML looks like!
+<catalog>
+   <book id="bk101">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book>
+</catalog>
+
+Sample output 1
+author 2
+title 2
+genre 2
+price 2
+publish_date 2
+description 2
+bookid="bk101" 1
+catalog 0
+
