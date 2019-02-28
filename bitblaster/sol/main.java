@@ -21,7 +21,7 @@ public class main {
 			}
 		}
 		if (BX == 0) {
-			System.out.println("WARNING: BX is 0");
+			//System.out.println("WARNING: BX is 0");
 		}
 		
 		//Testing

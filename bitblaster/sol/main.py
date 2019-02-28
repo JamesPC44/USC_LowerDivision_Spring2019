@@ -7,7 +7,7 @@ for i in range(0, N):
 	A.append(int(input()))
 	
 # Debug
-print(A)
+#print(A)
 
 # Find Value
 AX = 0
@@ -27,7 +27,7 @@ for i in range(0, N):
 		break
 
 if BX == 0:
-	print("WARNING: BX is 0")
+	#print("WARNING: BX is 0")
 
 # For Testing!
 nimsum = A[0]

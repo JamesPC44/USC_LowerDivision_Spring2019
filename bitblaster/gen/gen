@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Generates the Input and Output Files for the problem.
+
+if [ $# -lt 6 ]; then
+  echo "Usage: ./gen min_testcase max_testcase min_index max_index min_number max_number [-d]"
+  echo "Use -d for debugging."
+  exit 1
+fi
+
+echo "Generating Test Cases..."
+
+MIN_TC=$1
+MAX_TC=$2
+MIN_IDX=$3
+MAX_IDX=$4
+MIN_NUM=$5
+MAX_NUM=$6
+DEBUG=$(if [ "$7" = "-d" ]; then 
+          echo 1
+        fi)
+
+cd ..
+
+for i in $(seq $MIN_TC $MAX_TC);
+do
+  
+  IN=$(python3 gen/gen.py $MIN_IDX $MAX_IDX $MIN_NUM $MAX_NUM)
+  echo "$IN" > testcases/input/input$i.txt
+  OUT=$(cd sol && echo "$IN" | make run-c)
+  echo "$OUT" > testcases/output/output$i.txt
+  if [ "$DEBUG" = "1" ]; then
+    echo "Testcase $i:"
+    echo "Input:"
+    echo "$IN"
+    echo "Output:"
+    echo "$OUT"
+  fi
+done
