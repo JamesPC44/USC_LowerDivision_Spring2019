@@ -25,16 +25,11 @@ public class Solution {
     }
   }
   public static void main(String [] args){
-    try{
-    Scanner fileScanner = new Scanner(new File(args[0]));
+    Scanner fileScanner = new Scanner(System.in);
     String s = "";
     while(fileScanner.hasNext())
       s+= fileScanner.next();
     Solution sol = new Solution();
     sol.printXmlDepth(s);
-    }
-    catch(FileNotFoundException e){
-      System.out.println("File not found");
-    }
   }
 }
