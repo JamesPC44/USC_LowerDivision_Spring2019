@@ -54,7 +54,11 @@
 	The number $n_j$ of jumps taken to return to the initial position 0 is the only output. This number will be calculated by following the rules specified in the problem description. Note that $n_j > 0$ even though the jumper begins on position 0 because the problem is concerned with the number of jumps required to \textbf{return} to position 0.
 
 	\section*{Samples}
-	\#TODO
+	Several sample inputs and their corresponding outputs are shown. In Sample 0, the jump angle is so small that the first jump lands the jumper back at the start location. Thus the number of jumps is 1.
+
+    In Sample 1, there are two positions and the jumper lands on both. The first jump distance is given by \[ -\frac{2(-32/5)(7)^2}{10(1+(-32/5)^2)} \approx 1.49 \] which truncates to a movement of 1 space. The second jump works similarly and lands the jumper back at the start position.
+
+    Sample 2 is another slightly larger sample.
 	\newcommand{\sample}[1]{
 		\begin{tabular}{|c|c|}
 			\hline
