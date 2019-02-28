@@ -14,11 +14,11 @@ public class autoGenXML{
 	public static String generateTag(){
 		String tag = "";
 		int cond = 0;
-		while(cond < rand.nextInt(26)){
+		while(cond < rand.nextInt(25) + 1){
 			tag += alpha.charAt(rand.nextInt(52)) + "";
 			cond++;
 		}
-		
+
 		String retTag = "<" + tag+ ">";
 		for(int i = 0; i < rand.nextInt(10); i++){
 			if(rand.nextInt(2) == 0){
@@ -26,11 +26,11 @@ public class autoGenXML{
 			}
 			retTag += generateTag();
 		}
-		retTag += "</" + tag+ ">"; 
+		retTag += "</" + tag+ ">";
 		return retTag;
 	}
 
-	public static void main(String [] args){	
+	public static void main(String [] args){
 		PrintWriter writer;
 		for(int i = 0; i < 20; i++){
 			try {
@@ -45,7 +45,7 @@ public class autoGenXML{
 		} catch (IOException e) {
 			System.out.println("In catch");
 		}
-			
+
 		}
 	}
 	public static void generateAnswer(String inputFileName, String outputFileName) throws java.io.IOException {
