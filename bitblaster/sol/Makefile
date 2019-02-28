@@ -7,17 +7,17 @@ JC="javac"
 all: c java	
 
 c:
-	$(CC) main.c -Wall -o $(CEXEC)
+	@$(CC) main.c -Wall -o $(CEXEC)
 java:
-	$(JC) main.java
+	@$(JC) main.java
 
 run: 
 	echo "Use 'run-c', 'run-java', or 'run-py'"
 
-run-c: 
+run-c: c
 	@./$(CEXEC)
 
-run-java:
+run-java: java
 	@java main
 
 run-py: 

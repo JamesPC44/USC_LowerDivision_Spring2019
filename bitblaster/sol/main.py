@@ -26,7 +26,7 @@ for i in range(0, N):
 		A[i] = BX # Just For Testing!
 		break
 
-if BX == 0:
+#if BX == 0:
 	#print("WARNING: BX is 0")
 
 # For Testing!
