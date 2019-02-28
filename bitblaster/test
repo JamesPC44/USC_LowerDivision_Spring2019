@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# This tests output from all versions of the program to ensure that they match
+
+N=""
+A=""
+ELEM=""
+
+echo "Output Tester. Enter Parameters..."
+
+read N 
+size=$(echo "$N-1" | bc)
+
+A=$(
+for i in $(seq 0 $size);
+do
+	read ELEM
+	echo $ELEM
+done)
+
+echo "Testing Programs..."
+
+cd sol
+
+J=$(make run-java <<< "$N
+$A")
+C=$(make run-c <<< "$N
+$A")
+P=$(make run-py <<< "$N
+$A")
+
+if [ "$J" = "$C" ] && [ "$J" = "$P" ] && [ "$C" = "$P" ]; then
+	echo "All Outputs Match."
+	echo "Sample Output:"
+	echo "$J"
+	exit 0
+else
+	echo ">>WARNING: MISMATCH!<<"
+	echo "Java:"
+	echo "$J"
+	echo "Python:"
+	echo "$P"
+	echo "C:"
+	echo "$C"
+	exit 1
+fi
+
+
+
+

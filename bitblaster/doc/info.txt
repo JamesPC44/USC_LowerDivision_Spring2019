@@ -1,0 +1,5 @@
+This problem revolves around having the student make the correct move in a game of nim to make the stack a zero game.
+
+By Bruteforcing hte problem, the student will probably make a solution in n^3 time, where n^2 are for actually solving hte problem, and the last loop is for converting into binary. The actual solution is to use xor (^) and do everything in n time.
+
+See http://www.ams.org/publicoutreach/feature-column/fcarc-games4 for Nim Explanation

@@ -1,0 +1,23 @@
+# Format for the Testcases:
+
+## Parameters:
+
+Inputs will be in the following ranges:
+
+N: (1, infinity)
+
+A: (1, infinity)
+
+For all A: A1 ^ A2 ^ ... ^ AN != 0. (If a case is generated, pick a number to change by 1 or something)
+
+## Input:
+
+N -> Number of stacks
+
+A1, A2, A3, ... AN -> Numerical Values of the stacks
+
+## Output:
+
+AX BX -> AX: Initial value of the stack that was changed, BX: New Stack Value
+
+Note: Since in the game of nim, there can be multiple stacks with the same value, this solves that problem of the program finding the correct value, but in a dfferent stack than the one that My Implementation does.
