@@ -1,7 +1,9 @@
-﻿Your grandma needs your help again, but it isn't just to fix her printer!  She needs to know how deep XML tags are, and wants to know as soon as she sees a closing tag!  Since your grandma is extremely meticulous all her XML documents are perfectly formatted and every tag lines up correctly! 
+﻿Your grandma needs your help again, but it isn't just to fix her printer!  She needs to know how deep XML tags are, and wants to know as soon as she sees a closing tag!  Since your grandma is extremely meticulous all her XML documents are perfectly formatted and every tag lines up correctly!
 
 Input Format
 A string containing XML, as mentioned above your grandma makes great XML and all the tags are guaranteed to be syntactically correct.
+Tags are guaranteed to come on their own line, and may be closed on the same line.
+For example, `<catalog></catalog> is valid input, but <catalog><book></book></catalog> is not.`
 
 Output Format
 each tag followed by a space followed by its depth, each tag should be on its own line.
@@ -29,7 +31,7 @@ Let's remember what XML looks like!
       <genre>Computer</genre>
       <price>44.95</price>
       <publish_date>2000-10-01</publish_date>
-      <description>An in-depth look at creating applications 
+      <description>An in-depth look at creating applications
       with XML.</description>
    </book>
 </catalog>
