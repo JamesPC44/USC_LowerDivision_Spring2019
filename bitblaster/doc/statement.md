@@ -44,7 +44,7 @@ AN -> Last Number
 
 For any number of the array, you will be guaranteed to get a case where the result from the bit flipping is not already 0. Also numbers may be repeated in the code.
 
-1 <= N <= 2147483647
+1 <= N <= 6535
 
 1 <= AN <= 2147483647
 
