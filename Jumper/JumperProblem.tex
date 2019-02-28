@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{datatool}
+\DTLsetseparator{ = }
+\DTLloaddb[noheader, keys={mykey,myvalue}]{myvars}{jumpervars.py}
+\newcommand{\var}[1]{\DTLfetch{myvars}{mykey}{#1}{myvalue}}
+
+\usepackage{tikz}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{xintexpr}
+\usepackage{listings}
+
+\title{Jumper}
+\author{Hunter Damron}
+\date{1 March 2019}
+
+\begin{document}
+	\maketitle
+
+	\section*{Problem Description}
+	\noindent
+	A professional jumper wants to explore the very steep Andes Mountains but he is very peculiar in his jumping technique. He only jumps perpendicular to the slope he is currently on and refuses to walk anywhere. He also doesn't carry any sleeping gear when he jumps so he wants to make sure he can get back to where he started. For simplicity, the mountains are divided into discrete positions where the jumper can stand, each having a specific slope. The slope of each possible position is specified by a list of integer pairs $x_i, y_i$ which can be used to calculate the slope $m_i = \frac{y_i}{x_i}$.
+
+	The possible jump distance from position $i$ is given by
+	% \[ d_i = \frac{m_iv^2}{g\sqrt{1+m_i^2}} \]   % TODO: This math is wrong -- I forgot \sin(2\theta)
+	\[ d_i = -\frac{2 m_i v^2}{g (1+m_i^2)} \]
+	in the same direction as $x_i$ (i.e.\ if $x_i > 0$ then the jump is in the $+x$ direction).
+
+	Following the above rules, count the number of jumps required to return to the initial position, index 0. Right is the $+x$ direction and negative indices are not allowed.
+
+	\section*{Inputs}
+	The input is specified as follows:
+	\begin{enumerate}
+		\item The first line specifies two space-separated integers: velocity $v$ and the number of possible positions $n$
+		\item The next $n$ lines each have two space-separated integers $x_i$ and $y_i$ which define the slope $m_i = \frac{y_i}{x_i}$ of position $i$
+	\end{enumerate}
+
+	\noindent
+	The following constraints are placed on the variables:
+	\begin{itemize}
+		\item $0 < v \leq \var{maxv}$
+		\item $0 < n \leq \var{maxn}$
+
+		\item $0 \leq y_i \leq \var{maxxy}$
+		\item $-\var{maxxy} \leq x_i \leq \var{maxxy}$
+		\item $x_i \neq 0$
+
+		\item $g = \var{g}$ (an integer approximation of the standard $9.81~m/s^2$)
+	\end{itemize}
+
+	\section*{Desired Output}
+	The number $n_j$ of jumps taken to return to the initial position 0 is the only output. This number will be calculated by following the rules specified in the problem description. Note that $n_j > 0$ even though the jumper begins on position 0 because the problem is concerned with the number of jumps required to \textbf{return} to position 0.
+
+	\section*{Samples}
+	\#TODO
+	\newcommand{\sample}[1]{
+		\begin{tabular}{|c|c|}
+			\hline
+			\lstinputlisting{input/input#1.txt} & \lstinputlisting{output/output#1.txt} \\
+			\hline
+		\end{tabular}
+	}
+	\begin{table}[h!]
+		\centering
+		\setlength{\tabcolsep}{1em}
+		\begin{tabular}{c}
+			Sample 0 \\
+			\sample{0} \\\\
+			Sample 1 \\
+			\sample{1} \\\\
+			Sample 2 \\
+			\sample{2}
+		\end{tabular}
+	\end{table}
+
+\end{document}
