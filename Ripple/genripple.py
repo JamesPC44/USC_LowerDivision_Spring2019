@@ -3,10 +3,14 @@
 # Hunter Damron 2019
 # Generates input files for Ripple Problem
 
-from random import randint
+from sys import argv
+
+from random import randint, seed
 from ripplevars import *
 
 def main():
+    if len(argv) > 1:
+         seed(argv[1])
     w = randint(1, maxw)
     h = randint(1, maxh)
     n = randint(1, maxn)
