@@ -34,7 +34,7 @@ int main() {
 		scanf("%d", &A[i]);
 	}
 	
-	printArr(A, N);
+	//printArr(A, N);
 	
 	sum = nimSum(A, N);
 	
@@ -49,7 +49,7 @@ int main() {
 	}
 	
 	if (BX == 0) {
-		printf("WARNING: BX is 0\n");
+		//printf("WARNING: BX is 0\n");
 	}
 	
 	sum = nimSum(A, N);
