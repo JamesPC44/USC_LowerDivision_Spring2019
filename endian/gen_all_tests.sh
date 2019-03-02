@@ -14,9 +14,12 @@ else
 	CASES=20
 fi
 
-mkdir -p input output
+mkdir -p input output bin
+gcc generator.c -o bin/generator
 
-if [ -e "input/input0.txt" ] || [ -e "output/output0.txt" ]; then
+INPUT_FILE="./input/input0.txt"
+OUTPUT_FILE="./output/output0.txt"
+if [ -e "$INPUT_FILE" ] || [ -e "$INPUT_FILE" ]; then
 	echo "ERROR: '$INPUT_FILE' or '$OUTPUT_FILE' exists"
 	printf "Overwrite? y/[n] "
 	read force
@@ -27,7 +30,8 @@ for sample in $(seq 0 $CASES); do
 	INPUT_FILE="./input/input$sample.txt"
 	OUTPUT_FILE="./output/output$sample.txt"
 
-	RAND_INPUT="$(./gen_input.py)"
+	# RAND_INPUT="$(./gen_input.py)"
+	RAND_INPUT="$(./bin/generator $sample)"
 	LINES="$(echo "$RAND_INPUT" | wc -l)"
 	(echo "$LINES"; echo "$RAND_INPUT") > "$INPUT_FILE"
 	solutions/solution.py < "$INPUT_FILE" > "$OUTPUT_FILE"
