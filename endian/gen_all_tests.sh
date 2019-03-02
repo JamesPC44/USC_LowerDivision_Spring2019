@@ -33,7 +33,7 @@ for sample in $(seq 0 $CASES); do
 	# RAND_INPUT="$(./gen_input.py)"
 	RAND_INPUT="$(./bin/generator $sample)"
 	LINES="$(echo "$RAND_INPUT" | wc -l)"
-	(echo "$LINES"; echo "$RAND_INPUT") > "$INPUT_FILE"
+	(echo "$LINES"; printf "%s" "$RAND_INPUT") > "$INPUT_FILE"
 	solutions/solution.py < "$INPUT_FILE" > "$OUTPUT_FILE"
 done
 
